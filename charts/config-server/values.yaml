@@ -18,7 +18,10 @@ serviceAccount:
   # Specifies whether a service account should be created
   create: true
   # Annotations to add to the service account
-  annotations: {}
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/resource-policy": keep
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
@@ -127,7 +130,7 @@ affinity: {}
 ## version: branch/tag of the repo to be used
 gitRepo:
   uri: https://github.com/mosip/mosip-config
-  version: 1.2.0_v3
+  version: develop
   ## Folders within the base repo where properties may be found.
   searchFolders: ""
   private: false
