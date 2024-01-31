@@ -1,28 +1,28 @@
 {{/*
 Return the proper  image name
 */}}
-{{- define "keygen.image" -}}
+{{- define "keymanager.image" -}}
 {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
 {{- end -}}
 
 {{/*
 Return the proper image name (for the init container volume-permissions image)
 */}}
-{{- define "keygen.volumePermissions.image" -}}
+{{- define "keymanager.volumePermissions.image" -}}
 {{- include "common.images.image" ( dict "imageRoot" .Values.volumePermissions.image "global" .Values.global ) -}}
 {{- end -}}
 
 {{/*
 Return the proper Docker Image Registry Secret Names
 */}}
-{{- define "keygen.imagePullSecrets" -}}
+{{- define "keymanager.imagePullSecrets" -}}
 {{- include "common.images.pullSecrets" (dict "images" (list .Values.image .Values.volumePermissions.image) "global" .Values.global) -}}
 {{- end -}}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "keygen.serviceAccountName" -}}
+{{- define "keymanager.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create -}}
     {{ default (printf "%s" (include "common.names.fullname" .)) .Values.serviceAccount.name }}
 {{- else -}}
@@ -35,8 +35,8 @@ Compile all warnings into a single message.
 */}}
 {{- define "keygen.validateValues" -}}
 {{- $messages := list -}}
-{{- $messages := append $messages (include "keygen.validateValues.foo" .) -}}
-{{- $messages := append $messages (include "keygen.validateValues.bar" .) -}}
+{{- $messages := append $messages (include "keymanager.validateValues.foo" .) -}}
+{{- $messages := append $messages (include "keymanager.validateValues.bar" .) -}}
 {{- $messages := without $messages "" -}}
 {{- $message := join "\n" $messages -}}
 
@@ -48,7 +48,7 @@ Compile all warnings into a single message.
 {{/*
 Return podAnnotations
 */}}
-{{- define "keygen.podAnnotations" -}}
+{{- define "keymanager.podAnnotations" -}}
 {{- if .Values.podAnnotations }}
 {{ include "common.tplvalues.render" (dict "value" .Values.podAnnotations "context" $) }}
 {{- end }}
