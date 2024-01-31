@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     spec:
-      serviceAccountName: {{ template "keygen.serviceAccountName" . }}
+      serviceAccountName: {{ template "keymanager.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
@@ -73,6 +73,7 @@ spec:
               copy_resource "configmap" "activemq-activemq-artemis-share" "activemq" "{{ .Release.Namespace }}"
               copy_resource "configmap" "s3" "s3" "{{ .Release.Namespace }}"
               copy_resource "configmap" "msg-gateway" "msg-gateways" "{{ .Release.Namespace }}"
+
             }
 
             # Error handling settings
