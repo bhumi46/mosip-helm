@@ -4,7 +4,6 @@ metadata:
   name: configmap-secret-copier
   namespace: {{ .Release.Namespace }}
   annotations:
-    "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-4"
     "helm.sh/resource-policy": keep
 rules:

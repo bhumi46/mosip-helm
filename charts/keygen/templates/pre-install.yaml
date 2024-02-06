@@ -35,9 +35,6 @@ spec:
             #!/bin/bash
             # Copy configmaps and secrets from other namespaces
 
-            #istio_label
-            echo Istio label
-            kubectl label ns {{ .Release.Namespace }} istio-injection=enabled --overwrite
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
               local RESOURCE_TYPE="$1"
