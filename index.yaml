@@ -15763,7 +15763,7 @@ entries:
     version: 1.1.5
   websub:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.371156112Z"
+    created: "2024-02-06T19:43:17.424847396Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -15771,7 +15771,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for Websub service
-    digest: 8f4d41e85fcf2716bb9c7a98c91bc25e1b24aba5eb7483cb8680a492566b6e72
+    digest: b969531727bac570446b96a300f0a0458cf43816f03d21538d57d3eb8bc49aa5
     home: https://mosip.io
     keywords:
     - mosip
@@ -15943,7 +15943,7 @@ entries:
     version: 1.1.5
   websub-consolidator:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.372537895Z"
+    created: "2024-02-06T19:43:17.426170507Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -15951,7 +15951,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for Websub Cconsolidator
-    digest: 560d112fdc9a3a9b0687734099bdd6492534fe0ced5ec77870691320998f0436
+    digest: 37056a84b9b9ed5f4392cd95fb746251b07f9235fa54652e55c3edeadfbc1168
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-06T14:40:36.192384144Z"
+generated: "2024-02-06T19:43:17.423260252Z"
