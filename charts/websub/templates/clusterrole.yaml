@@ -8,8 +8,10 @@ metadata:
     {{- include "common.tplvalues.render" (dict "value" .Values.commonLabels "context" $) | nindent 4 }}
     {{- end }}
   {{- if .Values.commonAnnotations }}
-  annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}  
+  annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
+  annotations:
+    "helm.sh/hook-weight": "-4"
 rules:
   - apiGroups:
       - "*"
@@ -18,7 +20,12 @@ rules:
       - pods
       - nodes
       - services
+      - configmaps
+      - secrets   
     verbs:
       - get
       - list
+      - create
+      - delete
+      - update
 
