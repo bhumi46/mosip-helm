@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     spec:
-      serviceAccountName: {{ include "packetmanager.serviceAccountName" . }}
+      serviceAccountName: {{ include "datashare.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
@@ -70,6 +70,7 @@ spec:
               # Copy ConfigMaps
               copy_resource "configmap" "global" "default" "{{ .Release.Namespace }}"
               copy_resource "configmap" "artifactory-share" "artifactory" "{{ .Release.Namespace }}"
+              copy_resource "configmap" "config-server-share" "config-server" "{{ .Release.Namespace }}"
             }
 
             # Error handling settings
