@@ -75,6 +75,7 @@ spec:
               # Copy ConfigMaps
               copy_resource "configmap" "global" "default" "{{ .Release.Namespace }}"
               copy_resource "configmap" "config-server-share" "config-server" "{{ .Release.Namespace }}"
+              copy_resource "configmap" "artifactory-share" "artifactory" "{{ .Release.Namespace }}"           
             }
 
             # Error handling settings
