@@ -7610,7 +7610,7 @@ entries:
     version: 12.0.1-B3
   packetmanager:
   - apiVersion: v2
-    created: "2024-02-07T20:08:03.390200136Z"
+    created: "2024-02-07T20:16:18.139551175Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -7618,7 +7618,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Packetmanager module
-    digest: 5669b34d1cd03a8783664e4578a2635c9a2acc80528e2e424bc057671e1b999d
+    digest: d50b55eaafdbe86216313b5cea7e1eed6ff620e51e5dd19a2d970d5d4bf2f094
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-07T20:08:03.387106376Z"
+generated: "2024-02-07T20:16:18.137962581Z"
