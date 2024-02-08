@@ -27,9 +27,9 @@ spec:
         host: {{ template "common.names.fullname" . }}
         port:
           number: {{ .Values.service.port }}
-    corsPolicy:
-    allowOrigins:
-      - exact:
+  - corsPolicy:
+      allowOrigins:
+        - exact:
     headers:
       request:
         set:
