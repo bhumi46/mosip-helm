@@ -30,7 +30,7 @@ spec:
           number: {{ .Values.service.port }}
   - corsPolicy:
       allowOrigins:
-        - exact:
+      - exact:
     headers:
       request:
         set:
