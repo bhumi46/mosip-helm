@@ -422,10 +422,4 @@ istio:
     enabled: true
     allowOrigins:
       - exact: "$(kubectl get cm global -o jsonpath={.data.mosip-admin-host})"
-    allowMethods:
-      - GET
-      - POST
-    allowHeaders:
-      - Authorization
-    maxAge: "24h"
 
