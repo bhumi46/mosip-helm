@@ -11,6 +11,8 @@ metadata:
   {{- if .Values.commonAnnotations }}
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-2"
 spec:
   hosts:
   - "*"
@@ -26,7 +28,8 @@ spec:
         port:
           number: {{ .Values.service.port }}
     corsPolicy:
-    {{- include "common.tplvalues.render" ( dict "value" .Values.istio.corsPolicy "context" $ ) | nindent 6 }}
+    allowOrigins:
+      - exact:
     headers:
       request:
         set:
