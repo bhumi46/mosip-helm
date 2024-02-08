@@ -5483,7 +5483,7 @@ entries:
     version: 12.0.1-B2
   masterdata:
   - apiVersion: v2
-    created: "2024-02-08T15:12:10.387632609Z"
+    created: "2024-02-08T15:23:58.043002854Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -5491,7 +5491,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Masterdata module
-    digest: 8093e79a2e6e331b160ee3fcf19a87c4b86a75075aee784522b2a7841c3a3aab
+    digest: a42855fbd8a8beb03fbb1d3c0e0076916a19a39c779431b8d43caea86cb71ae8
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-08T15:12:10.385603351Z"
+generated: "2024-02-08T15:23:58.041196408Z"
