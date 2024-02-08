@@ -290,7 +290,7 @@ persistence:
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
   ## If undefined (the default) or set to null, no storageClassName spec is
-  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   set, choosing thhelm dependency build
   ##   GKE, AWS & OpenStack).
   ##
   # storageClass: "-"
@@ -420,5 +420,6 @@ istio:
   prefix: /v1/masterdata
   corsPolicy:
     allowOrigins:
-      - exact: "$(kubectl get cm global -o jsonpath={.data.mosip-admin-host})"
+      - exact:
+
 
