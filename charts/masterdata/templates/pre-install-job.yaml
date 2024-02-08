@@ -40,7 +40,7 @@ spec:
                 # Replace the placeholder with ADMIN_HOST value
                 UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed "s|https://.*|https://$ADMIN_HOST|g")
                 # Apply the updated YAML content
-                echo "$UPDATED_YAML_CONTENT" | kubectl create -f -
+                echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
                 echo "YAML file updated successfully with ADMIN_HOST value."
             }
 
@@ -49,3 +49,4 @@ spec:
             set -o nounset
             set -o errtrace
             set -o pipefail
+            update_yaml_with_admin_host
