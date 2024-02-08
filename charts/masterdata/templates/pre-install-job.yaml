@@ -38,7 +38,7 @@ spec:
                 # Fetch the YAML from Kubernetes
                 YAML_CONTENT=$(kubectl get virtualservices "{{.Release.Name}}" "{{ .Release.Namespace }}" -o yaml)
                 # Replace the placeholder with ADMIN_HOST value
-                UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed "s|exact:.*|exact: $ADMIN_HOST|g")
+                UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed "s|https://.*|https://$ADMIN_HOST|g")
                 # Apply the updated YAML content
                 echo "$UPDATED_YAML_CONTENT" | kubectl create -f -
                 echo "YAML file updated successfully with ADMIN_HOST value."

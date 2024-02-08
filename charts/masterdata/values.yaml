@@ -418,5 +418,6 @@ istio:
   gateways:
     - istio-system/internal
   prefix: /v1/masterdata
-
-
+  corsPolicy:
+    allowOrigins:
+      - exact: https://
