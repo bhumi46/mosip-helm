@@ -8092,7 +8092,7 @@ entries:
     version: 12.0.1-B2
   pms-partner:
   - apiVersion: v2
-    created: "2024-02-13T18:26:28.712904852Z"
+    created: "2024-02-13T18:31:44.551133376Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -8100,7 +8100,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Partner Management Service Partner service
-    digest: c67262c6fcc0ee2615f445c8748ff7f7f4e9c73adbf8f202d3aab5e1a704cdcd
+    digest: c90f8d2330fbb53dd49009f3912293ee09255bd1cf28159805181f0da07cd5eb
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-13T18:26:28.711300702Z"
+generated: "2024-02-13T18:31:44.549477528Z"
