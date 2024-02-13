@@ -33,9 +33,8 @@ spec:
             #!/bin/bash
             # Function to label the namespace with Istio injection
             function label_namespace_with_istio_injection() {
-              local NS="$1"
-              echo "Labeling namespace $NS with Istio injection"
-              kubectl label ns "$NS" istio-injection=enabled --overwrite
+              echo "Labeling namespace "{{ .Release.Namespace }}" with Istio injection"
+              kubectl label ns "{{ .Release.Namespace }}" istio-injection=enabled --overwrite
             }
 
             # Label the namespace with Istio injection for the destination namespace
@@ -79,13 +78,6 @@ spec:
               copy_resource "configmap" "artifactory-share" "artifactory" "{{ .Release.Namespace }}"
             }
 
-            # Error handling settings
-            set -e
-            set -o errexit
-            set -o nounset
-            set -o errtrace
-            set -o pipefail
-
             copy_resources
             echo "updating virtualservice cors policy"
             function update_yaml_with_pmp_host() {
@@ -99,10 +91,9 @@ spec:
                 echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
                 echo "YAML file updated successfully with PMP_HOST value."
             }
-
+            update_yaml_with_pmp_host
             set -e
             set -o errexit
             set -o nounset
             set -o errtrace
             set -o pipefail
-            update_yaml_with_pmp_host
