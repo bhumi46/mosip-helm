@@ -10,7 +10,9 @@ metadata:
   {{- if .Values.commonAnnotations }}
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
-
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-2"
 data:
   config.json: |-
    {"BASE_URL":"https://{{ tpl .Values.prereg.apiHost . }}",  "PRE_REG_URL" : "/preregistration/v1/"}

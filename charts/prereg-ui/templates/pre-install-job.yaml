@@ -1,0 +1,52 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{.Release.Name}}"
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: {{.Release.Service | quote }}
+    app.kubernetes.io/instance: {{.Release.Name | quote }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-1"
+spec:
+  template:
+    metadata:
+      name: "{{.Release.Name}}"
+      namespace: {{ .Release.Namespace }}
+      labels:
+        app.kubernetes.io/managed-by: {{.Release.Service | quote }}
+        app.kubernetes.io/instance: {{.Release.Name | quote }}
+        helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+    spec:
+      serviceAccountName: {{ template "prereg-ui.serviceAccountName" . }}
+      restartPolicy: Never
+      containers:
+      - name: pre-install-job
+        image: bitnami/kubectl:1.22.9
+        command:
+        - /bin/bash
+        - -c
+        - |
+            #!/bin/bash
+            echo "updating gateways host and virtual services "
+            function update_yaml_with_prereg_host() {
+                # Get PREREG_HOST value from ConfigMap
+                PREREG_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-prereg-host})
+                # Fetch the YAML from Kubernetes
+                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" configmaps "{{.Release.Name}}" -o yaml)
+                # Replace the placeholder with ADMIN_HOST value
+                UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed "s|https://.*|https://$PREREG_HOST|g")
+                # Apply the updated YAML content
+                echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
+                echo "CONFIGMAP  updated successfully with PREREG_HOST value."
+            }
+
+            set -e
+            set -o errexit
+            set -o nounset
+            set -o errtrace
+            set -o pipefail
+            update_yaml_with_prereg_host
