@@ -38,7 +38,7 @@ spec:
                 # Get PMP_HOST value from ConfigMap
                 PMP_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-pmp-host})
                 # Fetch the YAML from Kubernetes
-                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways "{{.Release.Name}}" -o yaml)
+                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways pmp-gateway -o yaml)
                 # Replace the placeholder with ADMIN_HOST value
                 UPDATED_YAML_CONTENT=$(sed -i "/^\s*hosts:/ {n;s/^\s*-.*$/    - $PMP_HOST/}" <<<"$YAML_CONTENT")
                 # Apply the updated YAML content
