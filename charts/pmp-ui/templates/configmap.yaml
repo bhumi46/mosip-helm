@@ -10,6 +10,9 @@ metadata:
   {{- if .Values.commonAnnotations }}
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-2"
 data:
   config.json: |-
    {"baseUrl": "{{ tpl .Values.pmp.apiUrl . }}",  "pmpUrl" : "/", "primaryLangCode": "eng", "secondaryLangCode": "ara", "version": "/v1/"}

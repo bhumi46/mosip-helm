@@ -31,14 +31,6 @@ spec:
         - -c
         - |
             #!/bin/bash
-            # Function to label the namespace with Istio injection
-            function label_namespace_with_istio_injection() {
-              echo "Labeling namespace "{{ .Release.Namespace }}" with Istio injection"
-              kubectl label ns "{{ .Release.Namespace }}" istio-injection=enabled --overwrite
-            }
-
-            # Label the namespace with Istio injection for the destination namespace
-            label_namespace_with_istio_injection "{{ .Release.Namespace }}"
             # Copy configmaps and secrets from other namespaces
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
