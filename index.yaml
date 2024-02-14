@@ -7936,7 +7936,7 @@ entries:
     version: 12.0.1-B2
   pmp-ui:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.308105604Z"
+    created: "2024-02-14T19:26:37.369498174Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -7944,7 +7944,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP pmp UI module
-    digest: 13821023332df35ea34699b76ec1850ccbe75325f754460514a4bb759b0c2016
+    digest: 9d5f6a05ad4a474fcf940c4b7215846e4cec8b526ccd279ff520cd4559502c9a
     home: https://mosip.io
     keywords:
     - mosip
@@ -8092,7 +8092,7 @@ entries:
     version: 12.0.1-B2
   pms-partner:
   - apiVersion: v2
-    created: "2024-02-13T18:31:44.551133376Z"
+    created: "2024-02-14T19:26:37.370917371Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -8100,7 +8100,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Partner Management Service Partner service
-    digest: c90f8d2330fbb53dd49009f3912293ee09255bd1cf28159805181f0da07cd5eb
+    digest: 5edc4ec016c42a63e9e74ad40a9c311d0cfa6078da2f4d6ac141a55fd53eeb38
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-13T19:42:26.495735891Z"
+generated: "2024-02-14T19:26:37.367778144Z"
