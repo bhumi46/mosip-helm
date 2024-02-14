@@ -38,15 +38,30 @@ spec:
                 # Fetch the YAML from Kubernetes
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" configmaps "{{.Release.Name}}" -o yaml)
                 # Replace the placeholder with ADMIN_HOST value
-                UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed "s|https://.*|https://$INTERNAL_API_HOST|g")
+                UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed "s|https://.*|https://"$INTERNAL_API_HOST"/|g")
                 # Apply the updated YAML content
                 echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
                 echo "CONFIGMAP  updated successfully with INTERNAL_API_HOST value."
             }
+            update_yaml_with_INTERNAL_API_HOST
+            # Function to label the namespace with Istio injection
 
+            echo "updating gateways host and virtual services "
+            function update_yaml_with_pmp_gateway_host() {
+                # Get PMP_HOST value from ConfigMap
+                PMP_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-pmp-host})
+                # Fetch the YAML from Kubernetes
+                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways pmp-gateway -o yaml)
+                # Replace the placeholder with ADMIN_HOST value
+                UPDATED_YAML_CONTENT=$(sed -i "/^\s*hosts:/ {n;s/^\s*-.*$/    - $PMP_HOST/}" <<<"$YAML_CONTENT")
+                # Apply the updated YAML content
+                echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
+                echo "GATEWAY  updated successfully with PMP_HOST value."
+            }
+            update_yaml_with_pmp_gateway_host
             set -e
             set -o errexit
             set -o nounset
             set -o errtrace
             set -o pipefail
-            update_yaml_with_INTERNAL_API_HOST
+
