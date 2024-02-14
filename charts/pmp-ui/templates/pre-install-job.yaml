@@ -38,7 +38,7 @@ spec:
                 # Fetch the YAML from Kubernetes
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" configmaps "{{.Release.Name}}" -o yaml)
                 # Replace the placeholder with ADMIN_HOST value
-                UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed 's|https://[^/]*|https://'"$INTERNAL_API_HOST"'|'|g")
+                UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed 's|https://[^/]*|https://'"$INTERNAL_API_HOST"'|g')
                 # Apply the updated YAML content
                 echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
                 echo "CONFIGMAP  updated successfully with INTERNAL_API_HOST value."
