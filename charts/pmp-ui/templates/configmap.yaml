@@ -12,7 +12,7 @@ metadata:
   {{- end }}
   annotations:
     "helm.sh/hook": pre-install
-    "helm.sh/hook-weight": "-2"
+    "helm.sh/hook-weight": "-3"
 data:
   config.json: |-
    {"baseUrl": "{{ tpl .Values.pmp.apiUrl . }}",  "pmpUrl" : "/", "primaryLangCode": "eng", "secondaryLangCode": "ara", "version": "/v1/"}
