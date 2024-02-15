@@ -14427,7 +14427,7 @@ entries:
     version: 1.2.0
   resident:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.357418352Z"
+    created: "2024-02-15T13:01:55.833297972Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -14435,7 +14435,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Resident service
-    digest: d168bcd836356a9761e9cb6c772b509641ececb953b2803d33959eee5206981a
+    digest: 46f998777c291a116f75c10affd093f535340d7eb402c29b1fe67bea9356f387
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-15T10:45:48.41676316Z"
+generated: "2024-02-15T13:01:55.831505238Z"
