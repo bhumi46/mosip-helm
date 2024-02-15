@@ -51,7 +51,7 @@ spec:
                 # Get pmp_HOST value from ConfigMap
                 PMP_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-resident-host})
                 # Fetch the YAML from Kubernetes
-                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways resident-gateway -o yaml)
+                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways resident-ui-gateway -o yaml)
                 # Replace the placeholder with PMP_HOST value
                 UPDATED_YAML_CONTENT=$(sed "s/resident\.sandbox\.xyz\.net/$RESIDENT_HOST/g" <<<"$YAML_CONTENT")
 
