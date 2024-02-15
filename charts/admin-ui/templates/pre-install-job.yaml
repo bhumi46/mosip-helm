@@ -54,10 +54,6 @@ spec:
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways admin-gateway -o yaml)
                 # Replace the placeholder with ADMIN_HOST value
                 UPDATED_YAML_CONTENT=$(sed "s/admin\.sandbox\.xyz\.net/$ADMIN_HOST/g" <<<"$YAML_CONTENT")
-                # Debug: Print the updated YAML content
-                echo "Updated YAML content:"
-                echo "$UPDATED_YAML_CONTENT"
-
                 # Apply the updated YAML content
                 if [[ -n "$UPDATED_YAML_CONTENT" ]]; then
                     echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
