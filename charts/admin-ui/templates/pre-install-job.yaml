@@ -10,7 +10,7 @@ metadata:
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
     "argocd.argoproj.io/hook": PreSync
-    "argocd.argoproj.io/sync-wave": "-6"
+    "argocd.argoproj.io/sync-wave": "-1"
 spec:
   template:
     metadata:
@@ -33,7 +33,7 @@ spec:
             #!/bin/bash
             echo "updating configmap base url with INTERNAL_API_HOST "
             function update_yaml_with_INTERNAL_API_HOST() {
-                # Get PREREG_HOST value from ConfigMap
+                # Get API_HOST value from ConfigMap
                 INTERNAL_API_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-api-internal-host})
                 # Fetch the YAML from Kubernetes
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" configmaps "{{.Release.Name}}" -o yaml)
@@ -53,12 +53,23 @@ spec:
                 # Fetch the YAML from Kubernetes
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways admin-gateway -o yaml)
                 # Replace the placeholder with ADMIN_HOST value
-                UPDATED_YAML_CONTENT=$(sed -i "/^\s*hosts:/ {n;s/^\s*-.*$/    - $ADMIN_HOST/}" <<<"$YAML_CONTENT")
+                UPDATED_YAML_CONTENT=$(sed "/^\s*hosts:/ {n;s/^\s*-.*$/    - $ADMIN_HOST/}" <<<"$YAML_CONTENT")
+                
+                # Debug: Print the updated YAML content
+                echo "Updated YAML content:"
+                echo "$UPDATED_YAML_CONTENT"
+
                 # Apply the updated YAML content
-                echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
-                echo "GATEWAY  updated successfully with ADMIN_HOST value."
+                if [[ -n "$UPDATED_YAML_CONTENT" ]]; then
+                    echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
+                    echo "GATEWAY updated successfully with ADMIN_HOST value."
+                else
+                    echo "Error: Updated YAML content is empty. Cannot apply."
+                fi
             }
+
             update_yaml_with_admin_gateway_host
+
             set -e
             set -o errexit
             set -o nounset
