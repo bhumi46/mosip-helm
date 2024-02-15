@@ -72,7 +72,7 @@ spec:
               # Copy Secrets
               copy_resource "secret" "keycloak-client-secrets" "keycloak" "{{ .Release.Namespace }}"
               copy_resource "secret" "s3" "s3" "{{ .Release.Namespace }}"
-              copy_resource "secret" "keyclaok" "keycloak" "{{ .Release.Namespace }}"
+              copy_resource "secret" "keycloak" "keycloak" "{{ .Release.Namespace }}"
             }
 
             copy_resources
@@ -81,3 +81,6 @@ spec:
             set -o nounset
             set -o errtrace
             set -o pipefail
+            echo "installing jq"
+
+
