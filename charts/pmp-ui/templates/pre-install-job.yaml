@@ -63,7 +63,7 @@ spec:
                     echo "Error: Updated YAML content is empty. Cannot apply."
                 fi
             }
-
+            update_yaml_with_pmp_gateway_host
             set -e
             set -o errexit
             set -o nounset
