@@ -1,0 +1,67 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{.Release.Name}}"
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/managed-by: {{.Release.Service | quote }}
+    app.kubernetes.io/instance: {{.Release.Name | quote }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+  annotations:
+    "argocd.argoproj.io/hook": PreSync
+    "argocd.argoproj.io/sync-wave": "-6"
+spec:
+  template:
+    metadata:
+      name: "{{.Release.Name}}"
+      namespace: {{ .Release.Namespace }}
+      labels:
+        app.kubernetes.io/managed-by: {{.Release.Service | quote }}
+        app.kubernetes.io/instance: {{.Release.Name | quote }}
+        helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+    spec:
+      serviceAccountName: {{ template "admin-ui.serviceAccountName" . }}
+      restartPolicy: Never
+      containers:
+      - name: pre-install-job
+        image: bitnami/kubectl:1.22.9
+        command:
+        - /bin/bash
+        - -c
+        - |
+            #!/bin/bash
+            echo "updating configmap base url with INTERNAL_API_HOST "
+            function update_yaml_with_INTERNAL_API_HOST() {
+                # Get PREREG_HOST value from ConfigMap
+                INTERNAL_API_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-api-internal-host})
+                # Fetch the YAML from Kubernetes
+                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" configmaps "{{.Release.Name}}" -o yaml)
+                # Replace the placeholder with ADMIN_HOST value
+                UPDATED_YAML_CONTENT=$(echo "$YAML_CONTENT" | sed 's|https://[^/]*|https://'"$INTERNAL_API_HOST"'|g')
+                # Apply the updated YAML content
+                echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
+                echo "CONFIGMAP  updated successfully with INTERNAL_API_HOST value."
+            }
+            update_yaml_with_INTERNAL_API_HOST
+            # Function to label the namespace with Istio injection
+
+            echo "updating gateways host and virtual services "
+            function update_yaml_with_admin_gateway_host() {
+                # Get admin_HOST value from ConfigMap
+                ADMIN_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-admin-host})
+                # Fetch the YAML from Kubernetes
+                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways admin-gateway -o yaml)
+                # Replace the placeholder with ADMIN_HOST value
+                UPDATED_YAML_CONTENT=$(sed -i "/^\s*hosts:/ {n;s/^\s*-.*$/    - $ADMIN_HOST/}" <<<"$YAML_CONTENT")
+                # Apply the updated YAML content
+                echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
+                echo "GATEWAY  updated successfully with ADMIN_HOST value."
+            }
+            update_yaml_with_admin_gateway_host
+            set -e
+            set -o errexit
+            set -o nounset
+            set -o errtrace
+            set -o pipefail
+

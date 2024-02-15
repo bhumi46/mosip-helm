@@ -10,6 +10,9 @@ metadata:
   {{- if .Values.commonAnnotations }}
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
+  annotations:
+    "argocd.argoproj.io/hook": PreSync
+    "argocd.argoproj.io/sync-wave": "-3"
 data:
   config.json: |-
     {"baseUrl":"{{ tpl .Values.admin.apiUrl . }}",  "adminUrl" : "/", "primaryLangCode": "eng", "secondaryLangCode": "fra", "validateToken": "authmanager/authorize/admin/validateToken", "login": "admin/login/",  "logout": "admin/logout/user", "templateRepoUrl": "/templates/" }
