@@ -10,7 +10,7 @@ metadata:
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
     "argocd.argoproj.io/hook": PreSync
-    "argocd.argoproj.io/sync-wave": "-5"
+    "argocd.argoproj.io/sync-wave": "-1"
 spec:
   template:
     metadata:
