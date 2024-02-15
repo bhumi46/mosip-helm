@@ -10,7 +10,9 @@ metadata:
   {{- if .Values.commonAnnotations }}
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
-
+  annotations:
+    "argocd.argoproj.io/hook": PreSync
+    "argocd.argoproj.io/sync-wave": "-3"
 data:
   config.json: |-
    {"baseUrl":"https://{{ .Values.resident.apiHost }}/resident/v1",

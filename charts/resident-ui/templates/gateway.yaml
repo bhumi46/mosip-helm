@@ -3,6 +3,9 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: resident-ui-gateway
+  annotations:
+    "argocd.argoproj.io/hook": PreSync
+    "argocd.argoproj.io/sync-wave": "-2"
 spec:
   selector:
     istio: {{ .Values.istio.ingressController.name }}
