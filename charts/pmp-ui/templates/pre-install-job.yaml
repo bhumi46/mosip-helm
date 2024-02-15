@@ -48,25 +48,12 @@ spec:
 
             echo "updating gateways host and virtual services "
             function update_yaml_with_pmp_gateway_host() {
-                # Get PMP_HOST value from ConfigMap
-                PMP_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-pmp-host})
-                # Fetch the YAML from Kubernetes
-                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways pmp-gateway -o yaml)
-                # Replace the placeholder with PMP_HOST value
-                UPDATED_YAML_CONTENT=$(sed -i "/^\s*hosts:/ {n;s/^\s*-.*$/    - $PMP_HOST/}" <<<"$YAML_CONTENT")
-                # Apply the updated YAML content
-                echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
-                echo "GATEWAY  updated successfully with PMP_HOST value."
-            }
-            update_yaml_with_pmp_gateway_host
-            echo "updating gateways host and virtual services "
-            function update_yaml_with_pmp_gateway_host() {
                 # Get pmp_HOST value from ConfigMap
                 PMP_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-pmp-host})
                 # Fetch the YAML from Kubernetes
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways pmp-gateway -o yaml)
                 # Replace the placeholder with PMP_HOST value
-                UPDATED_YAML_CONTENT=$(sed "/^\s*hosts:/ {n;s/^\s*-.*$/    - $PMP_HOST/}" <<<"$YAML_CONTENT")
+                UPDATED_YAML_CONTENT=$(sed "s/pmp\.sandbox\.xyz\.net/$PMP_HOST/g" <<<"$YAML_CONTENT")
                 
                 # Debug: Print the updated YAML content
                 echo "Updated YAML content:"
