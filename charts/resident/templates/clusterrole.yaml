@@ -26,6 +26,7 @@ rules:
       - virtualservices
       - gateways
       - namespaces
+      - deployments
     verbs:
       - get
       - list
