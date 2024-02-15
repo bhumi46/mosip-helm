@@ -198,7 +198,7 @@ entries:
     version: 1.2.0
   admin-service:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.2385629Z"
+    created: "2024-02-15T07:35:33.993894399Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -206,7 +206,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Admin module
-    digest: 09dd0009d0e57c777835c05753a0a342d91d573d4f749b6c6728d03cd04ebf6d
+    digest: 4b21c9ca9ee22e881637db677aa6673234a613db18f4b2b7d6e57b593ae4c488
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-14T20:27:57.46941158Z"
+generated: "2024-02-15T07:35:33.992218009Z"
