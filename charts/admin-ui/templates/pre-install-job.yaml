@@ -53,8 +53,7 @@ spec:
                 # Fetch the YAML from Kubernetes
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways admin-gateway -o yaml)
                 # Replace the placeholder with ADMIN_HOST value
-                UPDATED_YAML_CONTENT=$(sed "/^\s*hosts:/ {n;s/^\s*-.*$/    - $ADMIN_HOST/}" <<<"$YAML_CONTENT")
-                
+                UPDATED_YAML_CONTENT=$(sed "s/admin\.sandbox\.xyz\.net/$ADMIN_HOST/g" <<<"$YAML_CONTENT")
                 # Debug: Print the updated YAML content
                 echo "Updated YAML content:"
                 echo "$UPDATED_YAML_CONTENT"
