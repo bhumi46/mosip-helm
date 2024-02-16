@@ -8302,7 +8302,7 @@ entries:
     version: 1.1.5
   pms-policy:
   - apiVersion: v2
-    created: "2024-02-13T19:42:26.49735006Z"
+    created: "2024-02-16T05:46:42.747020561Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -8310,7 +8310,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Packetmanager module
-    digest: 2908fa6c8a7ff476f010ce8b7bf8a3136562e9a7e04f127e12995280270e6977
+    digest: 64d65b60d7ffe522836324627ffdf7bb3fa4c5ade15615415f9de264ac317cb0
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-16T05:37:09.544908111Z"
+generated: "2024-02-16T05:46:42.745409354Z"
