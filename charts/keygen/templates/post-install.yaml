@@ -24,7 +24,7 @@ spec:
       serviceAccountName: {{ template "keygen.serviceAccountName" . }}
       restartPolicy: Never
       containers:
-      - name: pre-install-job
+      - name: post-install-job
         image: bitnami/kubectl:1.22.9
         command:
         - /bin/bash
