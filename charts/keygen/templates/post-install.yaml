@@ -82,10 +82,10 @@ spec:
             set -o pipefail
 
             copy_resources
-      resources:
-        requests:
-          cpu: 100m
-          memory: 256Mi
-        limits:
-          cpu: 250m
-          memory: 512Mi
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 250m
+            memory: 512Mi
