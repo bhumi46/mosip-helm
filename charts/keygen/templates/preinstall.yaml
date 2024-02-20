@@ -11,7 +11,7 @@ metadata:
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-2"
-    "sidecar.inject": "false"
+    sidecar.istio.io/inject: "false"
 spec:
   template:
     metadata:
@@ -24,8 +24,6 @@ spec:
     spec:
       serviceAccountName: {{ template "keygen.serviceAccountName" . }}
       restartPolicy: Never
-      annotations:
-        sidecar.istio.io/inject: "false"
       containers:
       - name: pre-install-job
         image: bitnami/kubectl:1.22.9
