@@ -24,6 +24,8 @@ spec:
     spec:
       serviceAccountName: {{ template "keygen.serviceAccountName" . }}
       restartPolicy: Never
+      annotations:
+        sidecar.istio.io/inject: "false"
       containers:
       - name: pre-install-job
         image: bitnami/kubectl:1.22.9
