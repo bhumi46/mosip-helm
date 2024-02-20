@@ -9,8 +9,8 @@ metadata:
     app.kubernetes.io/version: {{ .Chart.AppVersion }}
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
-    "helm.sh/hook": pre-install
-    "helm.sh/hook-weight": "-2"
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "1"
 spec:
   template:
     metadata:
@@ -32,7 +32,8 @@ spec:
         - |
             #!/bin/bash
             # Copy configmaps and secrets from other namespaces
-
+            echo Istio label
+            kubectl label ns {{ .Release.Namespace }} istio-injection=enabled --overwrite
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
               local RESOURCE_TYPE="$1"
