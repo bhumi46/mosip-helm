@@ -4910,7 +4910,7 @@ entries:
     version: 1.1.5
   keygen:
   - apiVersion: v2
-    created: "2024-02-20T10:15:37.566042573Z"
+    created: "2024-02-20T11:22:34.451128802Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -4918,7 +4918,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart to generate keys
-    digest: bf361f7a0880a60c62378484a1f8af102ecb4bbcb9fb2584d9795b99b03dc0a3
+    digest: 1f1addd5a8122851a07e771ccfae86b41df5979a5cda112aa92d15475accc7c6
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-02-20T10:15:37.564630116Z"
+generated: "2024-02-20T11:22:34.449689164Z"
