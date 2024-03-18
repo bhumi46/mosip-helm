@@ -14,7 +14,6 @@ metadata:
     sidecar.istio.io/inject: "false"
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-2"
-    "sidecar.istio.io/inject": "false"
 spec:
   template:
     metadata:
