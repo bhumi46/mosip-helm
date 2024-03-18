@@ -13,6 +13,7 @@ metadata:
     # job is considered part of the release.
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-2"
+    sidecar.istio.io/inject: "false"
 spec:
   template:
     metadata:
@@ -34,6 +35,8 @@ spec:
         - |
             #!/bin/bash
             # Copy configmaps and secrets from other namespaces
+            echo Istio label
+            kubectl label ns {{ .Release.Namespace }} istio-injection=enabled --overwrite
 
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
