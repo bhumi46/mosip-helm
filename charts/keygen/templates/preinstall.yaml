@@ -20,8 +20,9 @@ spec:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
-        sidecar.istio.io/inject: "false"
     spec:
+      annotations:
+        sidecar.istio.io/inject: "false"
       serviceAccountName: {{ template "keygen.serviceAccountName" . }}
       restartPolicy: Never
       containers:
