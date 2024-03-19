@@ -31,8 +31,8 @@ replicaCount: 1
 
 image:
   registry: docker.io
-  repository: mosipqa/keys-generator
-  tag: develop
+  repository: mosipid/keys-generator
+  tag: 1.2.0.1-B3
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -303,9 +303,9 @@ serviceAccount:
   name:
 
 # kernel or id-authentication
-springConfigNameEnv: kernel
+springConfigNameEnv: id-authentication
 
 ## This param is to be set during installation.
 ## For Kernel: softhsm-kernel-share
 ## For IDA: softhsm-ida-share
-softHsmCM: softhsm-kernel-share
+softHsmCM:
