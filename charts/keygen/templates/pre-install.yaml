@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "{{.Release.Name}}-preinstall"
+  name: "{{.Release.Name}}"
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/managed-by: {{.Release.Service | quote }}
@@ -11,10 +11,11 @@ metadata:
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-1"
+    "helm.sh/hook-delete-policy": "before-hook-creation"
 spec:
   template:
     metadata:
-      name: "{{.Release.Name}}-preinstall"
+      name: "{{.Release.Name}}"
       namespace: {{ .Release.Namespace }}
       labels:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
