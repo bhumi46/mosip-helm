@@ -21,7 +21,6 @@ serviceAccount:
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-5"
-    "helm.sh/resource-policy": keep
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
