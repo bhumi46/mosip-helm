@@ -20,14 +20,13 @@ spec:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
-    spec:
-      annotations:
         sidecar.istio.io/inject: "false"
-      serviceAccountName: {{ template "keygen.serviceAccountName" . }}
+    spec:
+      serviceAccountName: {{ include "keygen.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
-        image: bitnami/kubectl:1.22.9
+        image: bitnami/kubectl:1.26.8
         command:
         - /bin/bash
         - -c
