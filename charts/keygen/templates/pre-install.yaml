@@ -9,9 +9,10 @@ metadata:
     app.kubernetes.io/version: {{ .Chart.AppVersion }}
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
+    # This is what defines this resource as a hook. Without this line, the
+    # job is considered part of the release.
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-2"
-    sidecar.istio.io/inject: "false"
 spec:
   template:
     metadata:
@@ -21,6 +22,7 @@ spec:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+        sidecar.istio.io/inject: "false"
     spec:
       serviceAccountName: {{ template "keygen.serviceAccountName" . }}
       restartPolicy: Never
@@ -33,8 +35,7 @@ spec:
         - |
             #!/bin/bash
             # Copy configmaps and secrets from other namespaces
-            echo Istio label
-            kubectl label ns {{ .Release.Namespace }} istio-injection=enabled --overwrite
+
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
               local RESOURCE_TYPE="$1"
@@ -72,7 +73,6 @@ spec:
               copy_resource "configmap" "artifactory-share" "artifactory" "{{ .Release.Namespace }}"
               copy_resource "configmap" "config-server-share" "config-server" "{{ .Release.Namespace }}"
               copy_resource "configmap" "softhsm-kernel-share" "softhsm" "{{ .Release.Namespace }}"
-              copy_resource "configmap" "softhsm-ida-share" "softhsm" "{{ .Release.Namespace }}"
             }
 
             # Error handling settings
@@ -83,10 +83,3 @@ spec:
             set -o pipefail
 
             copy_resources
-        resources:
-          requests:
-            cpu: 100m
-            memory: 256Mi
-          limits:
-            cpu: 250m
-            memory: 512Mi
