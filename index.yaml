@@ -7866,7 +7866,7 @@ entries:
     - https://mosip.github.io/mosip-helm/partner-onboarder-12.0.1-beta.tgz
     version: 12.0.1-beta
   - apiVersion: v2
-    created: "2024-01-11T12:08:47.580066642Z"
+    created: "2024-03-19T10:06:17.664808444Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -7874,7 +7874,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for onboarding default partners for MOSIP sandbox.
-    digest: 912cb1ae262b2599f44c5c1cf96feedb6f680b2bd6d6f414bdb25cd5a7318dae
+    digest: 252a9ccfbebe37063ee7fd1d55ccd8eadc8dc780477e3d4407cdecbe76c1b949
     home: https://mosip.io
     keywords:
     - mosip
@@ -16127,4 +16127,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-19T10:04:05.605993233Z"
+generated: "2024-03-19T10:06:17.662480776Z"
