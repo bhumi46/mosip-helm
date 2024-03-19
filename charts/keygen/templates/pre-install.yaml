@@ -5,13 +5,12 @@ metadata:
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/managed-by: {{.Release.Service | quote }}
-    app.kubernetes.io/instance: {{.Release.Name | quote }}
+    app.kubernetes.io/instance: "{{.Release.Name }}-preinstall"
     app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-2"
-    "helm.sh/hook-delete-policy": "before-hook-creation,hook-failed"
 spec:
   template:
     metadata:
