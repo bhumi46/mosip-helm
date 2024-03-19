@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "{{.Release.Name}}"
+  name: "{{.Release.Name}}-preinstall"
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/managed-by: {{.Release.Service | quote }}
@@ -16,7 +16,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: "{{.Release.Name}}"
+      name: "{{.Release.Name}}-preinstall"
       namespace: {{ .Release.Namespace }}
       labels:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
