@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "{{.Release.Name}}"
+  name: "{{.Release.Name}}-preinstall"
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/managed-by: {{.Release.Service | quote }}
@@ -15,11 +15,11 @@ metadata:
 spec:
   template:
     metadata:
-      name: "{{.Release.Name}}"
+      name: "{{.Release.Name}}-preinstall"
       namespace: {{ .Release.Namespace }}
       labels:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
-        app.kubernetes.io/instance: {{.Release.Name | quote }}
+        app.kubernetes.io/instance: "{{.Release.Name }}-preinstall"
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
         sidecar.istio.io/inject: "false"
     spec:
