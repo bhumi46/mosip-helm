@@ -80,7 +80,7 @@ spec:
               # Copy Secrets
               copy_resource "secret" "db-common-secrets" "postgres" "{{ .Release.Namespace }}"
               copy_resource "secret" "keycloak" "keycloak" "{{ .Release.Namespace }}"
-              #copy_resource "secret" "keycloak-client-secrets" "keycloak" "{{ .Release.Namespace }}"
+              copy_resource "secret" "keycloak-client-secrets" "keycloak" "{{ .Release.Namespace }}"
               copy_resource "secret" "activemq-activemq-artemis" "activemq" "{{ .Release.Namespace }}"
               copy_resource "secret" "softhsm-kernel" "softhsm" "{{ .Release.Namespace }}"
               copy_resource "secret" "softhsm-ida" "softhsm" "{{ .Release.Namespace }}"
