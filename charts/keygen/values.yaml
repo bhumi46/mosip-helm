@@ -303,12 +303,9 @@ serviceAccount:
   name:
 
 # kernel or id-authentication
-springConfigNameEnv:
+springConfigNameEnv: kernel
 
 ## This param is to be set during installation.
 ## For Kernel: softhsm-kernel-share
 ## For IDA: softhsm-ida-share
-softHsmCM:
-
-dependencies:
-  - pre-install-job
+softHsmCM: softhsm-kernel-share

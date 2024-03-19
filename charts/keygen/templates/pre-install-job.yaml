@@ -6,11 +6,12 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: {{.Release.Service | quote }}
     app.kubernetes.io/instance: {{.Release.Name | quote }}
-    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
     # This is what defines this resource as a hook. Without this line, the
     # job is considered part of the release.
+    "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-2"
 spec:
   template:
@@ -21,8 +22,9 @@ spec:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+        sidecar.istio.io/inject: "false"
     spec:
-      serviceAccountName: {{ template "keymanager.serviceAccountName" . }}
+      serviceAccountName: {{ include "keygen.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
@@ -33,9 +35,9 @@ spec:
         - |
             #!/bin/bash
             # Copy configmaps and secrets from other namespaces
-            #istio_label
             echo Istio label
             kubectl label ns {{ .Release.Namespace }} istio-injection=enabled --overwrite
+
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
               local RESOURCE_TYPE="$1"
@@ -73,7 +75,7 @@ spec:
               copy_resource "configmap" "artifactory-share" "artifactory" "{{ .Release.Namespace }}"
               copy_resource "configmap" "config-server-share" "config-server" "{{ .Release.Namespace }}"
               copy_resource "configmap" "softhsm-kernel-share" "softhsm" "{{ .Release.Namespace }}"
-            }
+              copy_resource "configmap" "softhsm-ida-share" "softhsm" "{{ .Release.Namespace }}"
 
             # Error handling settings
             set -e
