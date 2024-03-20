@@ -3,7 +3,6 @@ name: keygen
 description: A Helm chart to generate keys
 type: application
 version: 12.0.2
-appVersion: 1.1.0
 dependencies:
   - name: common
     repository: https://charts.bitnami.com/bitnami
@@ -13,7 +12,6 @@ dependencies:
 home: https://mosip.io
 keywords:
   - mosip
-  - artifactory
   - keymanager
   - keygen
   - kernel
