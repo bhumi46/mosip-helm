@@ -55,12 +55,12 @@ spec:
                 kubectl -n "$DESTINATION_NAMESPACE" delete --ignore-not-found=true "$RESOURCE" "$NEW_NAME"
                 kubectl -n "$SOURCE_NAMESPACE" get "$RESOURCE" "$RESOURCE_NAME" -o yaml | \
                   sed "s/namespace: $SOURCE_NAMESPACE/namespace: $DESTINATION_NAMESPACE/g" | \
-                  sed "s/name: $RESOURCE_NAME/name: $NEW_NAME/g" | kubectl -n "$DESTINATION_NAMESPACE" create -f -
+                  sed "s/name: $RESOURCE_NAME/name: $NEW_NAME/g" | kubectl -n "$DESTINATION_NAMESPACE" apply -f -
               else
                 kubectl -n "$DESTINATION_NAMESPACE" delete --ignore-not-found=true "$RESOURCE" "$RESOURCE_NAME"
                 kubectl -n "$SOURCE_NAMESPACE" get "$RESOURCE" "$RESOURCE_NAME" -o yaml | \
                   sed "s/namespace: $SOURCE_NAMESPACE/namespace: $DESTINATION_NAMESPACE/g" | \
-                  kubectl -n "$DESTINATION_NAMESPACE" create -f -
+                  kubectl -n "$DESTINATION_NAMESPACE" apply -f -
               fi
             }
 
