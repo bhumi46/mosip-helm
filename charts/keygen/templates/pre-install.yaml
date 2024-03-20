@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "{{.Release.Name}}-pre"
+  name: pre-install-job
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/managed-by: {{.Release.Service | quote }}
@@ -22,7 +22,7 @@ spec:
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
         sidecar.istio.io/inject: "false"
     spec:
-      serviceAccountName: {{ template "keygen.serviceAccountName" . }}
+      serviceAccountName: {{ include "keygen.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
