@@ -3,7 +3,7 @@ name: keygen
 description: A Helm chart to generate keys
 type: application
 version: 12.0.1-B3
-appVersion: 1.1.2
+appVersion: 1.1.0
 dependencies:
   - name: common
     repository: https://charts.bitnami.com/bitnami
