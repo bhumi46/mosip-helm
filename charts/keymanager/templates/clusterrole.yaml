@@ -11,6 +11,7 @@ metadata:
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
   annotations:
+    "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-4"
 rules:
   - apiGroups:
