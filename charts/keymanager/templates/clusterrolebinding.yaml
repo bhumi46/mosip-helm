@@ -14,6 +14,7 @@ metadata:
     # job is considered part of the release.
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-3"
+    "helm.sh/resource-policy": keep
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
