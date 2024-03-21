@@ -1,7 +1,7 @@
 apiVersion: {{ include "common.capabilities.rbac.apiVersion" . }}
 kind: ClusterRole
 metadata:
-  name: {{ include "common.names.fullname" . }}
+  name: {{ template "keymanager.serviceAccountName" . }}-pods-role
   namespace: {{ .Release.Namespace | quote }}
   labels: {{- include "common.labels.standard" . | nindent 4 }}
     {{- if .Values.commonLabels }}
@@ -13,21 +13,21 @@ metadata:
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-4"
-    "helm.sh/resource-policy": keep
 rules:
   - apiGroups:
       - "*"
     resources:
+      - endpoints
+      - pods
       - services
       - configmaps
       - secrets
       - virtualservices
       - gateways
-      - namespaces
     verbs:
       - get
       - list
       - create
+      - delete
       - update
       - patch
-
