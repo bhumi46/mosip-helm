@@ -7,6 +7,9 @@ kind: ConfigMap
 metadata:
   name: {{ printf "%s-share" (include "config-server.fullname" .) }}
   namespace: {{ .Release.Namespace }}
+  annotations:
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-1"
 data:
   active_profile_env : {{ .Values.activeProfileEnv }}
   spring_config_label_env: {{ .Values.gitRepo.version }}

@@ -24,6 +24,7 @@ rules:
       - secrets
       - virtualservices
       - gateways
+      - namespaces
     verbs:
       - get
       - list
