@@ -705,7 +705,7 @@ entries:
     version: 12.0.1-B2
   artifactory:
   - apiVersion: v2
-    created: "2024-03-21T19:55:24.707053957Z"
+    created: "2024-03-21T20:10:15.165992295Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -713,7 +713,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Artifactory
-    digest: d41118e3b27de303926cd972f2c048edb8acc9158e68d913265621f2af10a56d
+    digest: f74ee40c54f7c6caf0ee662bd7f3d921161e925b1880190f5aee9326f6da1578
     home: https://mosip.io
     keywords:
     - artifactory
@@ -2155,7 +2155,7 @@ entries:
   config-server:
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2024-03-21T18:45:14.455437417Z"
+    created: "2024-03-21T20:10:15.170006415Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -2163,7 +2163,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for configuration of MOSIP modules
-    digest: 8ac05ecf164e212b32c2dfe23a36f0f55bd821d15e5fa01f04da1ea10d87cae9
+    digest: e14dd5be481a8274dd95f42644689387ad4067d5495a25670a64022f184a35ca
     home: https://mosip.io
     keywords:
     - config-server
@@ -5130,7 +5130,7 @@ entries:
   keymanager:
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2024-03-21T11:55:59.199777541Z"
+    created: "2024-03-21T20:10:15.171829074Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -5138,7 +5138,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Keymanager module
-    digest: 9646cf50b2a637689cdd80cd89ef67f54755d088e0b617723a5bfbdacf438092
+    digest: 3600b2732bbf2715aece93040c175204f4cebf6f4a9be3b60c32a082d1105851
     home: https://mosip.io
     keywords:
     - mosip
@@ -16129,4 +16129,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-21T19:55:24.704688223Z"
+generated: "2024-03-21T20:10:15.164312171Z"
