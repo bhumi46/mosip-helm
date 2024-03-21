@@ -13,16 +13,22 @@ metadata:
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-4"
-    "helm.sh/resource-policy": keep
 rules:
   - apiGroups:
       - "*"
     resources:
+      - endpoints
+      - pods
+      - services
       - configmaps
       - secrets
+      - virtualservices
+      - gateways
       - namespaces
     verbs:
       - get
       - list
+      - create
+      - delete
       - update
       - patch
