@@ -28,6 +28,5 @@ rules:
       - get
       - list
       - create
-      - delete
       - update
       - patch
