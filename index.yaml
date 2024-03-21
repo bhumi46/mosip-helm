@@ -4958,7 +4958,7 @@ entries:
     - https://bhumi46.github.io/mosip-helm/keygen-12.0.3.tgz
     version: 12.0.3
   - apiVersion: v2
-    created: "2024-03-21T19:21:03.722436434Z"
+    created: "2024-03-21T19:36:37.277136329Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -4966,7 +4966,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart to generate keys
-    digest: 05ccad55c9d80edceb5b07483f016359b4391871210925307825dc24c0f02d26
+    digest: fa6830d8a0c7950fc585d8457dbf7f550b455f9f867592c933aa4342e551bf89
     home: https://mosip.io
     keywords:
     - mosip
@@ -16129,4 +16129,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-21T19:21:03.720920577Z"
+generated: "2024-03-21T19:36:37.275683526Z"
