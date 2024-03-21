@@ -1,5 +1,5 @@
 apiVersion: {{ include "common.capabilities.rbac.apiVersion" . }}
-kind: ClusterRole
+kind: Role
 metadata:
   name: {{ include "common.names.fullname" . }}
   namespace: {{ .Release.Namespace | quote }}
@@ -11,20 +11,19 @@ metadata:
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
   annotations:
+    # This is what defines this resource as a hook. Without this line, the
+    # job is considered part of the release.
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-4"
 rules:
   - apiGroups:
       - "*"
     resources:
-      - endpoints
-      - pods
       - services
       - configmaps
       - secrets
       - virtualservices
       - gateways
-      - namespaces
     verbs:
       - get
       - list
@@ -32,4 +31,3 @@ rules:
       - delete
       - update
       - patch
-
