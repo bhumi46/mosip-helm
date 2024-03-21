@@ -54,11 +54,11 @@ spec:
               if [ "$NEW_NAME" != "$RESOURCE_NAME" ]; then
                 kubectl -n "$SOURCE_NAMESPACE" get "$RESOURCE" "$RESOURCE_NAME" -o yaml | \
                   sed "s/namespace: $SOURCE_NAMESPACE/namespace: $DESTINATION_NAMESPACE/g" | \
-                  sed "s/name: $RESOURCE_NAME/name: $NEW_NAME/g" | kubectl -n "$DESTINATION_NAMESPACE" apply -f -
+                  sed "s/name: $RESOURCE_NAME/name: $NEW_NAME/g" | kubectl -n "$DESTINATION_NAMESPACE" create -f -
               else
                 kubectl -n "$SOURCE_NAMESPACE" get "$RESOURCE" "$RESOURCE_NAME" -o yaml | \
                   sed "s/namespace: $SOURCE_NAMESPACE/namespace: $DESTINATION_NAMESPACE/g" | \
-                  kubectl -n "$DESTINATION_NAMESPACE" apply -f -
+                  kubectl -n "$DESTINATION_NAMESPACE" create -f -
               fi
             }
 
