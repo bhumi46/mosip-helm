@@ -5130,7 +5130,7 @@ entries:
   keymanager:
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2024-03-21T10:37:48.879017971Z"
+    created: "2024-03-21T11:55:59.199777541Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -5138,7 +5138,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Keymanager module
-    digest: d0046987c4737a4a007791dcff4f0b9c92f07bc7c0b153b744b0adf209fb024a
+    digest: 9646cf50b2a637689cdd80cd89ef67f54755d088e0b617723a5bfbdacf438092
     home: https://mosip.io
     keywords:
     - mosip
@@ -16129,4 +16129,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-21T10:37:48.877182205Z"
+generated: "2024-03-21T11:55:59.197222066Z"
