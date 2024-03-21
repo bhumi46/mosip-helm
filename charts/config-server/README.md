@@ -40,4 +40,4 @@ $ helm install my-release mosip/config-server
       secretKeyRef:
         name: {{ .Values.overrides.secrets.secretName }}
         key: <key-name>
-  ```
+  ``
