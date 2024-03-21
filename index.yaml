@@ -2774,7 +2774,7 @@ entries:
     version: 1.1.5
   data-archive:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.262900243Z"
+    created: "2024-03-21T08:26:33.985847182Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -2783,7 +2783,7 @@ entries:
       version: 1.x.x
     description: A Helm chart for Kubernetes to initialize mosip_archive Postgres
       DB and execute py script to archive data from source db to archive db
-    digest: 88221e161cc2028ee5b55280a0952255002118ec832ee5b1f3b1f024aee4cf4e
+    digest: d8f4e1355352c94cc2afe5cbe3086949a1c0663c00cb5036b59d97bcb858cabf
     home: https://mosip.io
     keywords:
     - postgres
@@ -2795,7 +2795,7 @@ entries:
     name: data-archive
     type: application
     urls:
-    - https://bhumi46.github.io/mosip-helm/data-archive-1.0.0.tgz
+    - https://mosip.github.io/mosip-helm/data-archive-1.0.0.tgz
     version: 1.0.0
   databreachdetector:
   - apiVersion: v2
@@ -16129,4 +16129,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-21T08:06:33.124715569Z"
+generated: "2024-03-21T08:26:33.983764091Z"
