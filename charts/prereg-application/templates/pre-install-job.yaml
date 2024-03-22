@@ -20,12 +20,13 @@ spec:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+        sidecar.istio.io/inject: "false"
     spec:
       serviceAccountName: {{ template "prereg-application.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
-        image: bitnami/kubectl:1.22.9
+        image: bitnami/kubectl:1.26.8
         command:
         - /bin/bash
         - -c
@@ -35,7 +36,7 @@ spec:
             function label_namespace_with_istio_injection() {
               local NS="$1"
               echo "Labeling namespace $NS with Istio injection"
-              kubectl label ns "$NS" istio-injection=enabled --overwrite
+              kubectl label ns "$NS" istio-injection=disabled --overwrite
             }
 
             # Label the namespace with Istio injection for the destination namespace
