@@ -23,6 +23,7 @@ rules:
       - services
       - configmaps
       - secrets
+      - namespaces
     verbs:
       - get
       - list
