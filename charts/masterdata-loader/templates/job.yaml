@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: masterdata-loader
+  name: {{ template "common.names.fullname" . }}-job
   labels:
     {{- include "masterdata-loader.labels" . | nindent 4 }}
 spec:

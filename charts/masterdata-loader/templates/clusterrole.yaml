@@ -19,10 +19,12 @@ rules:
     resources:
       - endpoints
       - pods
-      - nodes
       - services
       - configmaps
       - secrets
+      - virtualservices
+      - gateways
+      - namespaces
     verbs:
       - get
       - list
