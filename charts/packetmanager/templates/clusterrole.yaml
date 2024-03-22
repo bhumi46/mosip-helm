@@ -23,10 +23,12 @@ rules:
       - services
       - configmaps
       - secrets
+      - namespaces
     verbs:
       - get
       - list
       - create
       - delete
       - update
+      - patch
 
