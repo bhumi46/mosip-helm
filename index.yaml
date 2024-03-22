@@ -1214,7 +1214,7 @@ entries:
     version: 12.0.1-B3
   authmanager:
   - apiVersion: v2
-    created: "2024-03-22T11:49:12.820980917Z"
+    created: "2024-03-22T11:55:46.57313916Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -1222,7 +1222,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Authentication Manager module
-    digest: b57fa35ac1d7de601326a4d1366b3fbf38a0bb3596b35d6c0a5347fd38d292fd
+    digest: 626b86540ceb66e54260aa193242bde576dfe199e468a9a28ff8ec66adbd2400
     home: https://mosip.io
     keywords:
     - mosip
@@ -16130,4 +16130,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-22T11:49:12.819245846Z"
+generated: "2024-03-22T11:55:46.571391675Z"
