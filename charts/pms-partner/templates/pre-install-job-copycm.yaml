@@ -20,18 +20,22 @@ spec:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+        sidecar.istio.io/inject: "false"
     spec:
-      serviceAccountName: {{ template "pms-partner.serviceAccountName" . }}
+      serviceAccountName: {{ include "websub-consolidator.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
-        image: bitnami/kubectl:1.22.9
+        image: bitnami/kubectl:1.26.8
         command:
         - /bin/bash
         - -c
         - |
             #!/bin/bash
             # Copy configmaps and secrets from other namespaces
+            echo Istio label
+            kubectl label ns {{ .Release.Namespace }} istio-injection=enabled --overwrite
+
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
               local RESOURCE_TYPE="$1"
@@ -66,11 +70,20 @@ spec:
             function copy_resources() {
               # Copy ConfigMaps
               copy_resource "configmap" "global" "default" "{{ .Release.Namespace }}"
-              copy_resource "configmap" "config-server-share" "config-server" "{{ .Release.Namespace }}"
               copy_resource "configmap" "artifactory-share" "artifactory" "{{ .Release.Namespace }}"
+              copy_resource "configmap" "config-server-share" "config-server" "{{ .Release.Namespace }}"
+
             }
 
+            # Error handling settings
+            set -e
+            set -o errexit
+            set -o nounset
+            set -o errtrace
+            set -o pipefail
+
             copy_resources
+
             echo "updating virtualservice cors policy"
             function update_yaml_with_pmp_host() {
                 # Get PMP_HOST value from ConfigMap
@@ -84,8 +97,4 @@ spec:
                 echo "YAML file updated successfully with PMP_HOST value."
             }
             update_yaml_with_pmp_host
-            set -e
-            set -o errexit
-            set -o nounset
-            set -o errtrace
-            set -o pipefail
+
