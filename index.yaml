@@ -4409,7 +4409,8 @@ entries:
     version: 12.0.2
   idrepo-saltgen:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.279705638Z"
+    appVersion: 12.0.2
+    created: "2024-03-24T18:08:14.429075877Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -4417,7 +4418,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart to generate salt for ID Repo.
-    digest: 1fbadfc052b4581b149c9bd4cdfb495bcef3844662b283afaca3051fea616d07
+    digest: e145357f7644ded215af9a18d1793a50c61638e9de934fe6e5886b268a0ed5c9
     home: https://mosip.io
     keywords:
     - mosip
@@ -9029,7 +9030,8 @@ entries:
     version: 1.1.5
   prereg-batchjob:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.318143288Z"
+    appVersion: 12.0.2
+    created: "2024-03-24T18:08:14.430430305Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -9037,7 +9039,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Batchjob service
-    digest: 0842236c43f8c7488db8c83438f658a8043548dc8e214bbb0e7f46aeb672fc30
+    digest: 88620d3d3416841917748d239a1f6b78f8fc05edc8604d8f19fc3f5bbdbd0729
     home: https://mosip.io
     keywords:
     - mosip
@@ -16134,4 +16136,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-22T21:57:25.915212332Z"
+generated: "2024-03-24T18:08:14.427777574Z"
