@@ -4410,7 +4410,7 @@ entries:
   idrepo-saltgen:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-24T18:08:14.429075877Z"
+    created: "2024-03-24T18:52:28.949960373Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -4418,7 +4418,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart to generate salt for ID Repo.
-    digest: e145357f7644ded215af9a18d1793a50c61638e9de934fe6e5886b268a0ed5c9
+    digest: 014b2765801c2b94e46fedfbef1af1d2891061555b442329c32e8314fe69889c
     home: https://mosip.io
     keywords:
     - mosip
@@ -16137,4 +16137,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-24T18:44:01.189050669Z"
+generated: "2024-03-24T18:52:28.948649216Z"
