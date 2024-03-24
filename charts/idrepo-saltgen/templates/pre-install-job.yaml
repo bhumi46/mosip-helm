@@ -22,18 +22,22 @@ spec:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+        sidecar.istio.io/inject: "false"
+
     spec:
-      serviceAccountName: {{ include "idrepo-salgen.serviceAccountName" . }}
+      serviceAccountName: {{ template "idrepo-saltgen.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
-        image: bitnami/kubectl:1.22.9
+        image: bitnami/kubectl:1.26.8
         command:
         - /bin/bash
         - -c
         - |
             #!/bin/bash
             # Copy configmaps and secrets from other namespaces
+            echo Istio label
+            kubectl label ns {{ .Release.Namespace }} istio-injection=enabled --overwrite
 
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
@@ -41,7 +45,7 @@ spec:
               local RESOURCE_NAME="$2"
               local SOURCE_NAMESPACE="$3"
               local DESTINATION_NAMESPACE="$4"
-              local NEW_NAME="${5:-$RESOURCE_NAME}"
+              local NEW_NAME="${5:-$RESOURCE_NAME}" 
 
               if [ "$RESOURCE_TYPE" = "configmap" ]; then
                 RESOURCE="configmap"
@@ -71,6 +75,7 @@ spec:
               copy_resource "configmap" "global" "default" "{{ .Release.Namespace }}"
               copy_resource "configmap" "artifactory-share" "artifactory" "{{ .Release.Namespace }}"
               copy_resource "configmap" "config-server-share" "config-server" "{{ .Release.Namespace }}"
+
             }
 
             # Error handling settings
@@ -81,3 +86,4 @@ spec:
             set -o pipefail
 
             copy_resources
+
