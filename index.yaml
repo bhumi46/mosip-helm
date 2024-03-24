@@ -7943,7 +7943,8 @@ entries:
     version: 12.0.1-B2
   pmp-ui:
   - apiVersion: v2
-    created: "2024-02-15T10:15:47.113299759Z"
+    appVersion: 12.0.2
+    created: "2024-03-24T19:34:41.876001413Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -7951,7 +7952,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP pmp UI module
-    digest: 5afa1a125baa751f7b77ef69a73d3486348e97d5c2feffb4088a949c49645504
+    digest: 78d82760388ace6c8daeacc5b7e34be9e13491e9d2749727d3f4d0e097817664
     home: https://mosip.io
     keywords:
     - mosip
@@ -8099,7 +8100,8 @@ entries:
     version: 12.0.1-B2
   pms-partner:
   - apiVersion: v2
-    created: "2024-02-16T05:37:09.554405369Z"
+    appVersion: 12.0.2
+    created: "2024-03-24T19:34:41.877580736Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -8107,7 +8109,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Partner Management Service Partner service
-    digest: 3d10c3e43e8944a4682ca210589afb67663e2d82b8fe81ce975f287aa86fb325
+    digest: c9794f49a4187b111d0b40948e7d74ce6348f5ddb76a6b251581300dbf183a7b
     home: https://mosip.io
     keywords:
     - mosip
@@ -8309,7 +8311,8 @@ entries:
     version: 1.1.5
   pms-policy:
   - apiVersion: v2
-    created: "2024-02-16T05:46:42.747020561Z"
+    appVersion: 12.0.2
+    created: "2024-03-24T19:34:41.879093654Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -8317,7 +8320,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Packetmanager module
-    digest: 64d65b60d7ffe522836324627ffdf7bb3fa4c5ade15615415f9de264ac317cb0
+    digest: 538a4c4920c9023d9522ae9eeedbaa03f5be7a321e4d47ced06a1a54a005abb3
     home: https://mosip.io
     keywords:
     - mosip
@@ -16137,4 +16140,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-24T18:52:28.948649216Z"
+generated: "2024-03-24T19:34:41.874069379Z"
