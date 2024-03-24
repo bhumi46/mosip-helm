@@ -9911,7 +9911,8 @@ entries:
     version: 1.1.5
   prereg-ui:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.325702316Z"
+    appVersion: 12.0.2
+    created: "2024-03-24T18:44:01.190664967Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -9919,7 +9920,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration UI
-    digest: 830fd825e2efb108d82fa834d2dffaf2165e766f8df5aa905d074501a79ccd24
+    digest: 5969a3567043c5eb05a0357332a40b2626512f18a9a8e6369b87fdbc9ceaa3a0
     home: https://mosip.io
     keywords:
     - mosip
@@ -16136,4 +16137,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-24T18:08:14.427777574Z"
+generated: "2024-03-24T18:44:01.189050669Z"
