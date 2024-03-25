@@ -52,7 +52,7 @@ service:
 
 image:
   registry: docker.io
-  repository: bn46/partner-management-service
+  repository: mosipdev/partner-management-service
   tag: develop
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
