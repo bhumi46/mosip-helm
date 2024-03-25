@@ -38,7 +38,6 @@ spec:
                 PREREG_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-prereg-host})
                 # Fetch the YAML from Kubernetes
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways "{{.Release.Name}}" -o yaml)
-                echo "YAML_CONTENT: $YAML_CONTENT"
                 # Replace the placeholder with ADMIN_HOST value
                 UPDATED_YAML_CONTENT=$(sed "s/prereg\.sandbox\.xyz\.net/$PREREG_HOST/g" <<<"$YAML_CONTENT")
                 # Apply the updated YAML content
