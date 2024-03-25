@@ -11098,7 +11098,7 @@ entries:
   regproc-group1:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-25T10:17:48.519493081Z"
+    created: "2024-03-25T10:24:22.510081755Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -11106,7 +11106,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Registration Processor Group 1
-    digest: 99ff4ba96442035fc1745ba057e65b63c0f29c28f61a2a02f73ca376d3531e64
+    digest: e1beb1e91eaf23ca361ae163b9f2e985b19015101fdcb60a5fefb83cd5e69f1b
     home: https://mosip.io
     keywords:
     - mosip
@@ -16146,4 +16146,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-25T10:17:48.517883927Z"
+generated: "2024-03-25T10:24:22.50853409Z"
