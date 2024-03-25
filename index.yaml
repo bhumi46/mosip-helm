@@ -9574,7 +9574,7 @@ entries:
     version: 1.2.0
   prereg-datasync:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.322991148Z"
+    created: "2024-03-25T12:40:42.4881054Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -9582,7 +9582,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Datasync service
-    digest: aacde942758320eceb5da22b43b09213de21890d3285a4e872bf21453bb79195
+    digest: 378886637826e4f5532c9e1829f781b77f99ee0c641d1a40cb6c2a3a8c08abb5
     home: https://mosip.io
     keywords:
     - mosip
@@ -16146,4 +16146,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-25T12:09:12.363138672Z"
+generated: "2024-03-25T12:40:42.486477207Z"
