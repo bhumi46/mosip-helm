@@ -3,9 +3,6 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: prereg-gateway
-  annotations:
-    "helm.sh/hook": pre-install
-    "helm.sh/hook-weight": "-2"
 spec:
   selector:
     istio: {{ .Values.istio.ingressController.name }}
