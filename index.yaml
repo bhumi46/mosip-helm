@@ -6050,7 +6050,7 @@ entries:
   mock-abis:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-25T09:20:53.249595864Z"
+    created: "2024-03-25T09:26:43.125345746Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -6058,7 +6058,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Mock ABIS
-    digest: 6346188c85fc0310b2c81e1d253c3f7299f0dd40ef5d0cb453efe023654160c3
+    digest: b9a1b649bec5965cf518c7100d26e5cfce5c7b07accd50caeddf43525b28dcc8
     home: https://mosip.io
     keywords:
     - mosip
@@ -6327,7 +6327,7 @@ entries:
     version: 0.0.1
   mock-mv:
   - apiVersion: v2
-    created: "2024-03-25T09:20:53.250933428Z"
+    created: "2024-03-25T09:26:43.126674971Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -6335,7 +6335,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Mock Manual Verification service
-    digest: 2d6fa9419ec253353689a036a0cc0e2c53d8c7b1700191386aea36da17e17056
+    digest: 1d3b56dae7d9338195c7003ec172da7451a596152f6cac147a81c5590472f9cb
     home: https://mosip.io
     keywords:
     - mosip
@@ -16144,4 +16144,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-25T09:20:53.247941176Z"
+generated: "2024-03-25T09:26:43.123708258Z"
