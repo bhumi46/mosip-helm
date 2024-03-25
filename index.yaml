@@ -10800,7 +10800,7 @@ entries:
     version: 1.1.5
   regproc-camel:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.331865647Z"
+    created: "2024-03-25T11:55:35.187235813Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -10808,7 +10808,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Registration Processor Camel stage
-    digest: a1f8ba188f97a48475d2eecfc771c06ca6306ad30fc04601a6133bb8b81dd909
+    digest: a42d6c78339bfddc9dfd1522bb0e1a3997710a579cf47fd6c620b526172255fb
     home: https://mosip.io
     keywords:
     - mosip
@@ -16146,4 +16146,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-25T10:24:22.50853409Z"
+generated: "2024-03-25T11:55:35.185673952Z"
