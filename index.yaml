@@ -13362,7 +13362,7 @@ entries:
   regproc-salt:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-25T09:47:47.215994607Z"
+    created: "2024-03-25T09:58:39.033849675Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -13370,7 +13370,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart to generate keys for Kernel
-    digest: 515e28e7f1b1ca424c08eb119ed328765f57c14d95f18d3573b77b7b74d5999d
+    digest: c8811d100de84bcf20628530bb19ee6664980aa1b46ed3aeb25781c6b6049a56
     home: https://mosip.io
     keywords:
     - mosip
@@ -16145,4 +16145,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-25T09:54:42.437040613Z"
+generated: "2024-03-25T09:58:39.03251174Z"
