@@ -9752,7 +9752,7 @@ entries:
   prereg-gateway:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-25T04:37:30.451423486Z"
+    created: "2024-03-25T04:47:43.210882021Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -9760,7 +9760,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Istio Gateway
-    digest: c699e888425ff5479ffae344389674e9ecded376daa732784c62c1b6d85f7865
+    digest: d41b27814b09b1b0f273b8492bdf4ed8daf3ff2a6ebbeadf22e2a5fe853ec405
     home: https://mosip.io
     keywords:
     - mosip
@@ -16142,4 +16142,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-25T04:37:30.449899256Z"
+generated: "2024-03-25T04:47:43.209364203Z"
