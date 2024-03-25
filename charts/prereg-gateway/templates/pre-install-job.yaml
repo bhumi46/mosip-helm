@@ -40,7 +40,7 @@ spec:
                 YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways "{{.Release.Name}}" -o yaml)
                 echo "YAML_CONTENT: $YAML_CONTENT"
                 # Replace the placeholder with ADMIN_HOST value
-                UPDATED_YAML_CONTENT=$(sed -i "/^\s*hosts:/ {n;s/^\s*-.*$/    - $PREREG_HOST/}" <<<"$YAML_CONTENT")
+                UPDATED_YAML_CONTENT=$(sed "/^\s*hosts:/ {n;s/^\s*-.*$/    - $PREREG_HOST/}" <<<"$YAML_CONTENT")
                 # Apply the updated YAML content
                 echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
                 echo "CONFIGMAP  updated successfully with PREREG_HOST value."
