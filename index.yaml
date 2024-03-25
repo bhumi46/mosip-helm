@@ -1410,7 +1410,7 @@ entries:
   biosdk-service:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-22T13:17:16.290386996Z"
+    created: "2024-03-25T09:54:42.438717933Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -1418,7 +1418,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Auditmanager module
-    digest: 652b5643bb122ef21947da74d156ced3aeafd6cb1379d22e1adf16be84d32d88
+    digest: 3c07ed5737d5014d77eac8409ca383074064f4db6f7b1d1e4c893dd8b02499a9
     home: https://mosip.io
     keywords:
     - mosip
@@ -2825,7 +2825,7 @@ entries:
   datashare:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-22T21:57:25.916825624Z"
+    created: "2024-03-25T09:54:42.440509606Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -2833,7 +2833,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Datashare module
-    digest: 9cf0fc7c27146d9d4bacb327bb3f7396e7ee68660f4d35a0965d5ae045d25b32
+    digest: 09da6e59c01e4337eb124e47d2dc808359bc729558144a8378534be1e32e7c1e
     home: https://mosip.io
     keywords:
     - mosip
@@ -7619,7 +7619,7 @@ entries:
   packetmanager:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-22T21:41:04.435390204Z"
+    created: "2024-03-25T09:54:42.44285646Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -7627,7 +7627,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Packetmanager module
-    digest: cf4c0c2e901bae784d1538b54b884ead8ee19022a20ad8c937dbe7ea656525a9
+    digest: 657cf1e8462b9abc09f4c2fb30ebccc6e784e52e1bc6a76d0bd2d20b752013f8
     home: https://mosip.io
     keywords:
     - mosip
@@ -16145,4 +16145,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-25T09:47:47.19874087Z"
+generated: "2024-03-25T09:54:42.437040613Z"
