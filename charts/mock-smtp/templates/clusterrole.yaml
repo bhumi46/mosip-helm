@@ -23,6 +23,8 @@ rules:
       - services
       - configmaps
       - secrets
+      - namespaces
+      - gateways
     verbs:
       - get
       - list

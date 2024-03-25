@@ -22,6 +22,7 @@ spec:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+        sidecar.istio.io/inject: "false"      
     spec:
       serviceAccountName: {{ include "mock-smtp.serviceAccountName" . }}
       restartPolicy: Never
@@ -34,6 +35,8 @@ spec:
         - |
             #!/bin/bash
             # Copy configmaps and secrets from other namespaces
+            echo Istio label
+            kubectl label ns {{ .Release.Namespace }} istio-injection=enabled --overwrite
 
             # Function to copy ConfigMaps or Secrets
             function copy_resource() {
