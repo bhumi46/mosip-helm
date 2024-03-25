@@ -22,7 +22,7 @@ spec:
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
         sidecar.istio.io/inject: "false"      
     spec:
-      serviceAccountName: {{ template "prereg-ui.serviceAccountName" . }}
+      serviceAccountName: {{ template "prereg-gateway.serviceAccountName" . }}
       restartPolicy: Never
       containers:
       - name: pre-install-job
