@@ -12,7 +12,7 @@ metadata:
     # This is what defines this resource as a hook. Without this line, the
     # job is considered part of the release.
     "helm.sh/hook": pre-install
-    "helm.sh/hook-weight": "-2"
+    "helm.sh/hook-weight": "-1"
 spec:
   template:
     metadata:
@@ -27,7 +27,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: pre-install-job
-        image: bitnami/kubectl:1.22.9
+        image: bitnami/kubectl:1.26.8
         command:
         - /bin/bash
         - -c
@@ -79,3 +79,22 @@ spec:
             set -o pipefail
 
             copy_resources
+            echo "updating gateways host  "
+            function update_yaml_with_smtp_gateway_host() {
+                # Get SMTP_HOST value from ConfigMap
+                SMTP_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-smtp-host})
+                # Fetch the YAML from Kubernetes
+                YAML_CONTENT=$(kubectl get -n "{{ .Release.Namespace }}" gateways "{{.Release.Name}}" -o yaml)
+                # Replace the placeholder with SMTP_HOST value
+                UPDATED_YAML_CONTENT=$(sed "s/smtp\.sandbox\.xyz\.net/$SMTP_HOST/g" <<<"$YAML_CONTENT")
+                # Apply the updated YAML content
+                echo "$UPDATED_YAML_CONTENT" | kubectl apply -f -
+                echo "GATEWAY  updated successfully with SMTP_HOST value."
+            }
+
+            set -e
+            set -o errexit
+            set -o nounset
+            set -o errtrace
+            set -o pipefail
+            update_yaml_with_smtp_gateway_host
