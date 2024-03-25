@@ -6647,7 +6647,7 @@ entries:
   mock-smtp:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-25T09:10:32.36255746Z"
+    created: "2024-03-25T09:13:35.696692949Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -6655,7 +6655,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart to mock-smtp server application.
-    digest: 4ef4f19b10ff43916820fb2cedd4798b874cec745e821576cb54163d78471feb
+    digest: 6fb59f3a3113158dcd48d3e0d8ac413ab82bb8a129f45437962b8d4beba1d563
     home: https://mosip.io
     keywords:
     - mosip
@@ -16143,4 +16143,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-25T09:10:32.360873075Z"
+generated: "2024-03-25T09:13:35.695097188Z"
