@@ -3,7 +3,7 @@ name: artifactory
 description: A Helm chart for MOSIP Artifactory
 type: application
 version: 12.0.2
-appVersion: 12.0.3
+appVersion: 12.0.4
 dependencies:
   - name: common
     repository: https://charts.bitnami.com/bitnami
