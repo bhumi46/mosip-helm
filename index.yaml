@@ -728,7 +728,8 @@ entries:
     - https://bhumi46.github.io/mosip-helm/artifactory-12.0.3.tgz
     version: 12.0.3
   - apiVersion: v2
-    created: "2024-03-26T05:35:16.76854212Z"
+    appVersion: 12.0.3
+    created: "2024-03-26T11:56:22.563063632Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -736,7 +737,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Artifactory
-    digest: b45876b6edab51dfbffbbdf85cd4140fcfadf6693f9528711dd5f58695075315
+    digest: b8efa36c2f493d42c8d8824d7613909757e1a01900cb389ec1b6e28472ecedd9
     home: https://mosip.io
     keywords:
     - artifactory
@@ -16169,4 +16170,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-26T08:59:45.228721973Z"
+generated: "2024-03-26T11:56:22.561463417Z"
