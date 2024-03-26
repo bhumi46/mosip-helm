@@ -4,9 +4,6 @@ description: A Helm chart for MOSIP Artifactory
 type: application
 version: 12.0.4
 appVersion: ""
-hooks:
-  pre-install:  # This defines the pre-install hook
-    - cmd: ["helm", "cache", "reset"]
 dependencies:
   - name: common
     repository: https://charts.bitnami.com/bitnami
