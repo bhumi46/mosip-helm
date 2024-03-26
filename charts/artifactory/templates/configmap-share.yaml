@@ -28,3 +28,4 @@ data:
   auth_wrapper_url_env: {{ printf "%s%s" (include "artifactory.baseUrl" .) .Values.artifacts.authwrapperUrl }}
   esignet_wrapper_url_env: {{ printf "%s%s" (include "artifactory.baseUrl" .) .Values.artifacts.esignetauthwrapperUrl }}
   test_url: {{ printf "%s%s" (include "artifactory.baseUrl" .) .Values.artifacts.testurl }}
+  another_url: {{ printf "%s%s" (include "artifactory.baseUrl" .) .Values.artifacts.anothertest }}
