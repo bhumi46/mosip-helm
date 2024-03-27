@@ -751,8 +751,7 @@ entries:
     - https://bhumi46.github.io/mosip-helm/artifactory-12.0.3.tgz
     version: 12.0.3
   - apiVersion: v2
-    appVersion: 12.0.4
-    created: "2024-03-26T13:25:42.430544605Z"
+    created: "2024-03-27T05:31:41.806349572Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -760,7 +759,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Artifactory
-    digest: 10a9d50dc0f2c81989fb35c521cbef989aa08926966880222d7255b41c8f44fd
+    digest: 881a78f70e0fe696ff962ee688817ddeb83f3748f49291537afde93e53c050ae
     home: https://mosip.io
     keywords:
     - artifactory
@@ -3355,7 +3354,7 @@ entries:
     version: 0.0.8
   ida-auth:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.272379734Z"
+    created: "2024-03-27T05:31:41.807915597Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -3363,7 +3362,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP IDA module
-    digest: 3e6ad690035853302af1b9f846a04f67a7ec425630bb644ed844ab4b83821ea8
+    digest: d7fe9de5abb93a722d1ad0671a97206389486cc538c7d0898a84cc129c083984
     home: https://mosip.io
     keywords:
     - mosip
@@ -3826,7 +3825,7 @@ entries:
     version: 1.1.5
   ida-otp:
   - apiVersion: v2
-    created: "2024-02-05T19:29:13.27600977Z"
+    created: "2024-03-27T05:31:41.81030142Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -3834,7 +3833,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP IDA module
-    digest: d4d67287936bb7cdfb29bbce9fede0afb8486bf1c6fb0d2fc7c2288ad2991a4f
+    digest: 7c017a2b98913310f1a82d8f649d65d446e14f3cca14a3f2e01db18d3017d299
     home: https://mosip.io
     keywords:
     - mosip
@@ -6374,7 +6373,7 @@ entries:
     version: 0.0.1
   mock-mv:
   - apiVersion: v2
-    created: "2024-03-25T09:26:43.126674971Z"
+    created: "2024-03-27T05:31:41.811683824Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -6382,7 +6381,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Mock Manual Verification service
-    digest: 1d3b56dae7d9338195c7003ec172da7451a596152f6cac147a81c5590472f9cb
+    digest: 7a0aed862a77b6a60001ed4568629a43d0ac6d2f3f8a44cfe10aef66f28ff561
     home: https://mosip.io
     keywords:
     - mosip
@@ -10340,7 +10339,8 @@ entries:
     version: 1.1.5
   print-service:
   - apiVersion: v2
-    created: "2024-02-13T17:31:21.151836354Z"
+    appVersion: 12.0.2
+    created: "2024-03-27T05:31:41.813027948Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -10348,7 +10348,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for sample Print Service
-    digest: c25f346b40263596728c6d5ef39861e4daf9d26ed56745c7ef5a89e0619cc65a
+    digest: 054388fd2d43e7623fda35a49ce8fe82e32ba15d699d67ebb1c601a8736d7b2f
     home: https://mosip.io
     keywords:
     - mosip
@@ -16193,4 +16193,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-27T04:22:51.139617066Z"
+generated: "2024-03-27T05:31:41.804808062Z"
