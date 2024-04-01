@@ -1456,7 +1456,7 @@ entries:
   biosdk-service:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-27T07:07:34.233843703Z"
+    created: "2024-04-01T11:19:01.536132792Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -1464,7 +1464,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Auditmanager module
-    digest: 662769aae96be87aaf17cf8ed95f9d679d2aee69c1e6f5f6184fa3689ddbddf9
+    digest: b89c2285dda90de31d7625a21b340567765aa8895685d56fe9ab34d0330e4e09
     home: https://mosip.io
     keywords:
     - mosip
@@ -9800,7 +9800,7 @@ entries:
   prereg-gateway:
   - apiVersion: v2
     appVersion: 12.0.2
-    created: "2024-03-27T07:07:34.30471651Z"
+    created: "2024-04-01T11:19:01.537510373Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -9808,7 +9808,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Pre-registration Istio Gateway
-    digest: 7e496fd7b362ae99466ce6f3a9cba799ed706742a1446a557532ac11799aeadb
+    digest: b0028d1dae19039cfa37608f469c73bc681f143b82bd369d5dfae2bf674862c7
     home: https://mosip.io
     keywords:
     - mosip
@@ -16193,4 +16193,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-03-27T07:24:00.95019186Z"
+generated: "2024-04-01T11:19:01.534468345Z"
