@@ -9,8 +9,8 @@ metadata:
     app.kubernetes.io/version: {{ .Chart.AppVersion }}
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
-    "helm.sh/hook": post-install
-    "helm.sh/hook-weight": "1"
+    "helm.sh/hook": pre-install
+    "helm.sh/hook-weight": "-1"
 spec:
   template:
     metadata:
@@ -32,7 +32,7 @@ spec:
         - -c
         - |
             #!/bin/bash
-            echo "updating gateways host and virtual services "
+            echo "updating gateways host and virtual services"
             function update_yaml_with_prereg_gateway_host() {
                 # Get PREREG_HOST value from ConfigMap
                 PREREG_HOST=$(kubectl get cm global -o jsonpath={.data.mosip-prereg-host})

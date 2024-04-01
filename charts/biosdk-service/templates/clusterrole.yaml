@@ -24,6 +24,7 @@ rules:
       - configmaps
       - secrets
       - namespaces
+      - virtualservices
     verbs:
       - get
       - list
