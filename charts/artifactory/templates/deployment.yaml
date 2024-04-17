@@ -90,6 +90,9 @@ spec:
           args: {{- include "common.tplvalues.render" (dict "value" .Values.args "context" $) | nindent 12 }}
           {{- end }}
           {{- if .Values.resources }}
+          env:
+          - name: testvar
+            value: 2345
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
           {{- if .Values.startupProbe.enabled }}
