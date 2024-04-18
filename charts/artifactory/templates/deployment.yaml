@@ -92,6 +92,8 @@ spec:
           env:
           - name: testvar
             value: bn
+          - name: testing
+            value: syed
           {{- if .Values.resources }}
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
