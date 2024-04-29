@@ -93,7 +93,7 @@ spec:
           - name: testvar
             value: bn
           - name: testing
-            value: bdd
+            value: syedsalman
           {{- if .Values.resources }}
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
