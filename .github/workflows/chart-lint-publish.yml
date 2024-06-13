@@ -36,6 +36,7 @@ on:
       - develop
       - MOSIP*
       - release*
+      - argocd
     paths:
       - 'charts/**'
 
