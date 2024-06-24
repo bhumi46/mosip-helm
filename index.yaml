@@ -8854,6 +8854,30 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/postgres-init-1.1.5.tgz
     version: 1.1.5
+  - apiVersion: v2
+    appVersion: 1.2.0
+    created: "2024-06-24T05:50:55.65016973Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for Kubernetes to initialize various Postgres DBs.
+    digest: 339af028f0ed6746714f13c1f3b00d1d458e53a1b36d94d62616dfb2d9fb4ded
+    home: https://mosip.io
+    keywords:
+    - postgres
+    - db
+    - database
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: postgres-init
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/postgres-init-0.0.1-develop.tgz
+    version: 0.0.1-develop
   postgres-upgrade:
   - apiVersion: v2
     appVersion: 1.2.0
@@ -16262,4 +16286,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-06-13T09:30:56.405478537Z"
+generated: "2024-06-24T05:50:55.648260676Z"
