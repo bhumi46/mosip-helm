@@ -1029,7 +1029,7 @@ entries:
     - https://mosip.github.io/mosip-helm/artifactory-1.1.5.tgz
     version: 1.1.5
   - apiVersion: v2
-    created: "2024-06-13T09:30:56.407017412Z"
+    created: "2024-07-09T05:46:41.271204701Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -1037,7 +1037,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart for MOSIP Artifactory
-    digest: c106241f734da8838db03fcb798cb848fedb56166c22b27284a13a77e6de88f3
+    digest: 04218d6e6ec74171d56452c8ea3fbfa3d1aa8fce6737f66e2c0bf2242809a8ef
     home: https://mosip.io
     keywords:
     - artifactory
@@ -8058,6 +8058,29 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/partner-onboarder-12.0.1-B2.tgz
     version: 12.0.1-B2
+  pmp-reactjs-ui:
+  - apiVersion: v2
+    created: "2024-07-09T05:46:41.272865404Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for MOSIP pmp reactJS UI module
+    digest: fe2b56a39057da690858115a358d46a3b608d5f6da54191db78b3312c1dc32cb
+    home: https://mosip.io
+    keywords:
+    - mosip
+    - pmp
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: pmp-reactjs-ui
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/pmp-reactjs-ui-0.0.1-develop.tgz
+    version: 0.0.1-develop
   pmp-ui:
   - apiVersion: v2
     appVersion: 12.0.2
@@ -8426,6 +8449,29 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/pms-partner-1.1.5.tgz
     version: 1.1.5
+  - apiVersion: v2
+    created: "2024-07-09T05:46:41.274834254Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for MOSIP Partner Management Service Partner service
+    digest: 4390d4b6cf15b58fbbc4bce3e81ea6b09ec1d8fbc47de26465fe090cae953f90
+    home: https://mosip.io
+    keywords:
+    - mosip
+    - pms-partner
+    - kernel
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: pms-partner
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/pms-partner-0.0.1-develop.tgz
+    version: 0.0.1-develop
   pms-policy:
   - apiVersion: v2
     appVersion: 12.0.2
@@ -8637,6 +8683,29 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/pms-policy-1.1.5.tgz
     version: 1.1.5
+  - apiVersion: v2
+    created: "2024-07-09T05:46:41.276700352Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for MOSIP Packetmanager module
+    digest: eff1f3669a40a4b6af7bdc108e5317230515c6127d9b7912cb03eb5d4d12ef8e
+    home: https://mosip.io
+    keywords:
+    - mosip
+    - pms-policy
+    - kernel
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: pms-policy
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/pms-policy-0.0.1-develop.tgz
+    version: 0.0.1-develop
   postgres-init:
   - apiVersion: v2
     appVersion: 1.2.0
@@ -16286,4 +16355,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-1.1.5.tgz
     version: 1.1.5
-generated: "2024-06-24T05:50:55.648260676Z"
+generated: "2024-07-09T05:46:41.269627114Z"
