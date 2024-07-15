@@ -12055,7 +12055,7 @@ entries:
     - https://mosip.github.io/mosip-helm/regclient-1.1.5.tgz
     version: 1.1.5
   - apiVersion: v2
-    created: "2024-07-14T13:40:40.610755166Z"
+    created: "2024-07-15T06:24:58.327774968Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -12063,7 +12063,7 @@ entries:
       - bitnami-common
       version: 1.x.x
     description: A Helm chart to installed Downloader for Regstration Client Application
-    digest: a78d029e5576358c78893e4fceee82ba1aba41a176fda01bcd16f3bd1e5b70b5
+    digest: 3a7156c20d10a992bbb25de7df400e769c693267ea54abeb9bd5cab0c67849fc
     home: https://mosip.io
     keywords:
     - mosip
@@ -18100,4 +18100,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-0.0.1-develop.tgz
     version: 0.0.1-develop
-generated: "2024-07-14T13:40:40.60906988Z"
+generated: "2024-07-15T06:24:58.326092173Z"
