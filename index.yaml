@@ -10051,6 +10051,29 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/postgres-upgrade-0.0.1-develop.tgz
     version: 0.0.1-develop
+  postgresbackup:
+  - apiVersion: v2
+    created: "2025-01-22T13:11:20.616019182Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart to deploy postgresbackup
+    digest: d1c7424531af27fc1fa47226ad5fa064d648a8477d5ec78c7bdce841932e8e3e
+    home: https://mosip.io
+    keywords:
+    - mosip
+    - postgresbackup
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: postgresbackup
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/postgresbackup-0.0.1-develop.tgz
+    version: 0.0.1-develop
   postgresql:
   - annotations:
       category: Database
@@ -18189,4 +18212,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-0.0.1-develop.tgz
     version: 0.0.1-develop
-generated: "2024-10-03T11:58:04.675453196Z"
+generated: "2025-01-22T13:11:20.614604127Z"
