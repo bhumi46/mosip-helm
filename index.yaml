@@ -2,6 +2,38 @@ apiVersion: v1
 entries:
   activemq-artemis:
   - apiVersion: v2
+    appVersion: 2.39.0
+    created: "2025-12-18T11:39:19.03409252Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: a multi-protocol, embeddable, very high performance, clustered, asynchronous
+      messaging system.
+    digest: 88af1d8eb22fab6c747f630f67643602ebcf6710c9b7e82631fb301f1555043f
+    home: https://activemq.apache.org/artemis/
+    icon: https://activemq.apache.org/assets/img/activemq_logo_icon.png
+    keywords:
+    - activemq
+    - artemis
+    - messaging
+    - mom
+    - amqp
+    - jms
+    - mqtt
+    maintainers:
+    - email: victor.romero@gmail.com
+      name: vromero
+    name: activemq-artemis
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/apache/activemq-artemis
+    urls:
+    - https://mosip.github.io/mosip-helm/activemq-artemis-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     appVersion: 2.6.2
     created: "2023-10-19T04:48:36.532247794Z"
     dependencies:
@@ -2474,6 +2506,29 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/conf-secrets-12.0.1-B2.tgz
     version: 12.0.1-B2
+  - apiVersion: v2
+    appVersion: 1.1.2
+    created: "2025-12-18T11:39:19.034920367Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for deploying secrets required by MOSIP config-server
+    digest: da0d0560c61f99a8fcaab826fe649f121732743f5b0732f892a849505ac25058
+    home: https://mosip.io
+    keywords:
+    - config-server
+    - conf-secrets
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: conf-secrets
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/conf-secrets-1.3.0-develop.tgz
+    version: 1.3.0-develop
   config-server:
   - apiVersion: v2
     appVersion: 1.1.2
@@ -5237,6 +5292,30 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/idrepo-saltgen-0.0.1-develop.tgz
     version: 0.0.1-develop
+  istio-addons:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-12-18T11:39:19.036006122Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart for MOSIP external services istio
+    digest: 7656e8842641a98ac3d8b638e51f1cf22e5c191989e7e7b75b653b4a563028ec
+    home: https://mosip.io
+    keywords:
+    - mosip
+    - istio-addons
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: istio-addons
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/istio-addons-0.0.1-develop.tgz
+    version: 0.0.1-develop
   kafka:
   - annotations:
       category: Infrastructure
@@ -6223,6 +6302,30 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/landing-page-12.0.1-B2.tgz
     version: 12.0.1-B2
+  - apiVersion: v2
+    created: "2025-12-18T11:39:19.038730059Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart to installed Downloader for Regstration Client Application
+    digest: 0ad4db422c4c0d5381de81f46331b40abff9d804402f8f9b2905a5c6e9d7bc86
+    home: https://mosip.io
+    keywords:
+    - mosip
+    - landing-page
+    - registration
+    - client
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: landing-page
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/landing-page-1.3.0-develop.tgz
+    version: 1.3.0-develop
   - apiVersion: v2
     created: "2024-07-10T20:32:22.825418613Z"
     dependencies:
@@ -11925,6 +12028,30 @@ entries:
     - https://mosip.github.io/mosip-helm/print-service-0.0.1-develop.tgz
     version: 0.0.1-develop
   regclient:
+  - apiVersion: v2
+    created: "2025-12-18T11:39:19.040181723Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: A Helm chart to installed Downloader for Regstration Client Application
+    digest: ded1427c07bfba6e01aff525261da637ee0bdfba35cf6e94bbab92315f868f8f
+    home: https://mosip.io
+    keywords:
+    - mosip
+    - regclient
+    - registration
+    - client
+    maintainers:
+    - email: info@mosip.io
+      name: MOSIP
+    name: regclient
+    type: application
+    urls:
+    - https://mosip.github.io/mosip-helm/regclient-12.0.3-develop.tgz
+    version: 12.0.3-develop
   - apiVersion: v2
     created: "2024-07-15T08:13:10.249225619Z"
     dependencies:
@@ -18212,4 +18339,4 @@ entries:
     urls:
     - https://mosip.github.io/mosip-helm/websub-consolidator-0.0.1-develop.tgz
     version: 0.0.1-develop
-generated: "2025-01-28T06:56:51.933653578Z"
+generated: "2025-12-18T11:39:19.032420346Z"
